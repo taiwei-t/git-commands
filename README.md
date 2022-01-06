@@ -1,5 +1,6 @@
 # Git Commands
-> ### 开始使用git  
+
+> ## 开始使用git
 
 * 设置用户名  
 `git config --global user.name "Your Name"`  
@@ -25,7 +26,7 @@ _注：如果add后又修改了文件，还要再add一次之后再commit_
 * 查看历史命令  
 `git reflog`
 
-> ### 版本控制  
+> ## 版本控制
 
 * 版本回退  
 `git reset --hard HEAD` _撤销所有未提交的操作，包括add_  
@@ -44,7 +45,7 @@ _场景3：已经提交了不合适的修改到版本库时，想要撤销本次
 `git rm --cached <file>` _把文件从版本库、暂存区删掉，但是保留硬盘文件_  
 `git mv <file> <other file>` _重命名文件_  
 
-> ### 远程仓库  
+> ## 远程仓库
 
 * 创建ssh密钥  
 `ssh-keygen -t rsa -C "youremail@example.com"`  
@@ -62,7 +63,7 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git branch --set-upstream <branch> origin/<branch>` _指定本地dev分支与远程origin/dev分支的链接_  
 `git push origin --delete <branch>` _删除远程分支_  
 
-> ### 分支管理  
+> ## 分支管理
 
 * 创建分支  
 `git checkout -b <branch>` _创建分支并切换过去，相当于执行了 `git branch <branch>` 和 `git checkout <branch>`_  
@@ -80,7 +81,7 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git stash pop` _恢复并删除stash_  
 `git stash apply stash@{0}` _多次stash，恢复指定的stash_  
 
-> ### 标签管理  
+> ## 标签管理
 
 * 创建标签  
 `git tag <name>` _创建标签_  
@@ -94,14 +95,13 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git push origin --tags` _一次性推送全部尚未推送到远程的本地标签_  
 `git push origin :refs/tags/<name>` _删除远程标签(删除远程标签之前要先删除本地标签)_  
 
-> ### 导出
+> ## 导出
 
 `git archive -o /d/www/update.zip HEAD $(git diff HEAD HEAD^ --name-only)` _导出和上个版本差异的文件_  
 `git archive -o /d/update/project.zip master -0` _导出纯净项目源码_  
 `git config core.quotepath false` _如果导出的文件有中文显示成Unicode导致导出失败，配置这个_  
 
-> ### 其他配置
+> ## 其他配置
 
 `git config core.gitproxy=socks5://127.0.0.1:1080` _设置socket5代理_  
 `git config core.filemode false` _忽略文件权限差异_  
-
